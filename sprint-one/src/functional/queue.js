@@ -21,6 +21,7 @@ var Queue = function() {
       }
     } 
     if (key > 0) {
+      delete storage[key - 1];
       key--;
     }
     return first;
