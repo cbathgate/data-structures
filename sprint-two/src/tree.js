@@ -15,21 +15,23 @@ treeMethods.addChild = function(value) {
 };
 
 treeMethods.contains = function(target) {
-  var recurse = function () {
-    if (this.children.length !== 0) {
-      for (var i = 0; i < this.children.length; i++) {
-        
-        recurse(this.children[i]);
-        if (this.children[i].value === target) {
-          return true;
-        } 
+  //debugger;
+  var result = false;
+
+  var recurse = function(treeChild) {
+    for (var i = 0; i < treeChild.length; i++) {
+      if (treeChild[i].value === target) {
+        result = true;
+        break;
+      } else if (treeChild[i].children.length > 0) {
+        recurse(treeChild[i].children);
       }
     }
-
-
-
   }; 
-  return false;
+
+  recurse(this.children);
+
+  return result; 
 };
 
 
