@@ -3,17 +3,33 @@ var Tree = function(value) {
   newTree.value = value;
 
   // your code here
-  newTree.children = null;  // fix me
-
+  newTree.children = [];  // fix me
+  _.extend(newTree, treeMethods);
   return newTree;
 };
 
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
+  this.children.push(Tree(value));
 };
 
 treeMethods.contains = function(target) {
+  var recurse = function () {
+    if (this.children.length !== 0) {
+      for (var i = 0; i < this.children.length; i++) {
+        
+        recurse(this.children[i]);
+        if (this.children[i].value === target) {
+          return true;
+        } 
+      }
+    }
+
+
+
+  }; 
+  return false;
 };
 
 
