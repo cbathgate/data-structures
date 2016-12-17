@@ -23,6 +23,11 @@ describe('hashTable', function() {
     expect(hashTable.retrieve('Steven')).not.to.equal('Seagal');
   });
 
+  it('should return null if value is not found during retrieval', function() {
+    hashTable.insert('Steven', 'Spielberg');
+    expect(hashTable.retrieve('George')).to.equal(null);
+  });
+
   it('should overwrite values that have the same key', function() {
     hashTable.insert('Bob', 'Loblaw');
     hashTable.insert('Bob', 'Barker');
