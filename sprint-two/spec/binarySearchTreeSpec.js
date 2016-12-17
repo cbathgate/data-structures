@@ -20,6 +20,16 @@ describe('binarySearchTree', function() {
     expect(binarySearchTree.right.left.value).to.equal(6);
   });
 
+  it('should insert values at the correct location in the tree using the "contains" method', function() {
+    binarySearchTree.insert(2);
+    binarySearchTree.insert(7);
+    binarySearchTree.insert(6);
+    binarySearchTree.insert(1);
+    binarySearchTree.insert(10);
+    expect(binarySearchTree.contains(1)).to.equal(true);
+    expect(binarySearchTree.contains(3)).to.equal(false);
+  });
+
   it('should have a working "contains" method', function() {
     binarySearchTree.insert(2);
     binarySearchTree.insert(3);
