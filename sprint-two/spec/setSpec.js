@@ -24,4 +24,12 @@ describe('set', function() {
     expect(set.contains('Mel Gibson')).to.equal(false);
   });
 
+  it('should not have duplicates in a set', function() {
+    set.add('Michelle Cui');
+    set.add('Cynthia Bathgate');
+    set.add('Cynthia Bathgate');
+    set.remove('Cynthia Bathgate');
+    expect(set.contains('Cynthia Bathgate')).to.equal(false);
+  });
+
 });
