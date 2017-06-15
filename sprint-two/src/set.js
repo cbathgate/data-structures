@@ -1,3 +1,5 @@
+// Implement set using the prototypal instantiation pattern
+
 var Set = function() {
   var set = Object.create(setPrototype);
   set._storage = {}; 
@@ -7,7 +9,7 @@ var Set = function() {
 var setPrototype = {};
 
 setPrototype.add = function(item) {
-  this._storage[item] = item;
+  this._storage[item] = true;
 };
 
 setPrototype.contains = function(item) {
